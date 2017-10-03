@@ -275,109 +275,11 @@
   </div>
 </div>
 
-<!-- Container (TOUR Section) -->
-<div id="tour" class="bg-1">
-  <div class="container">
-    <h3 class="text-center">WANT SOMETHING TO GO UP ONLINE?</h3>
-    <p class="text-center">EMAIL US YOU'RE WORK ANONYMOUS OR NOT WE ACCEPT ANYTHING BUT NUDES!</p>
-    <ul class="list-group">
-      <li class="list-group-item">September <span class="label label-danger">Read Now!</span></li>
-      <li class="list-group-item">October <span class="label label-danger"> Read now!</span></li> 
-      <li class="list-group-item">November <span class="badge">3</span></li> 
-    </ul>
-    
-    <div class="row text-center">
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="" alt="Paris" width="400" height="300">
-          <p><strong>October 5th </strong></p>
-          <p>FIRST COME FIST SERVED! </p>
-          <button class="btn" data-toggle="modal" data-target="#myModal"></button>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="newyork.jpg" alt="New York" width="400" height="300">
-          <p><strong>FOR ASTI, a Muse</strong></p>
-          <p>ARTWORK<DRAWINGS< </p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">SEND YOU'RE WORK HERE</button>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="thumbnail">
-          <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-          <p><strong>FOR RADICAL TIMES</strong></p>
-          <p>ARTICLES<POEMS< </p>
-          <button class="btn" data-toggle="modal" data-target="#myModal">SEND YOU'RE WORK HERE</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
   
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">×</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> </h4>
-        </div>
-        <div class="modal-body">
-          <form role="form">
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> What's You're Name?</label>
-              <input type="number" class="form-control" id="psw" placeholder="Input name or Anonymous">
-            </div>
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send </label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-              <button type="submit" class="btn btn-block">SEND REQUEST 
-                <span class="glyphicon glyphicon-ok"></span>
-              </button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-            <span class="glyphicon glyphicon-remove"></span> Cancel
-          </button>
-          <p>Need <a href="#">help?</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div id="contact" class="container">
-  <h3 class="text-center">Contact</h3>
-  <p class="text-center"><em>We love our fans!</em></p>
-
-  <div class="row">
-    <div class="col-md-4">
-      <p>Astian? Drop a note.
-      Stranger? Do not drop a note.....</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span>California, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 5109444123</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>Email: thelitclubatasti@gmail.com</p>
-    </div>
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-      <br>
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <button class="btn pull-right" type="submit">Send</button>
-        </div>
+    <div class="modal-dialog"
       </div>
     </div>
   </div>
@@ -405,55 +307,6 @@
   </div>
 </div>
 
-<!-- Add Google Maps -->
-<div id="googleMap"></div>
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-  <?php
-//if "email" variable is filled out, send email
-  if (isset($_REQUEST['email']))  {
-  
-  //Email information
-  $admin_email = "someone@example.com";
-  $email = $_REQUEST['email'];
-  $subject = $_REQUEST['subject'];
-  $comment = $_REQUEST['comment'];
-  
-  //send email
-  mail($admin_email, "$subject", $comment, "From:" . $email);
-  
-  //Email response
-  echo "Thank you for contacting us!";
-  }
-  
-  //if "email" variable is not filled out, display the form
-  else  {
-?>
-
- <form method="post">
-  Email: <input name="email" type="text" /><br />
-  Subject: <input name="subject" type="text" /><br />
-  Message:<br />
-  <textarea name="comment" rows="15" cols="40"></textarea><br />
-  <input type="submit" value="Submit" />
-  </form>
-  
-<?php
-  }
-?>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
 <!-- Footer -->
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
@@ -461,37 +314,6 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
   </a><br><br>
   <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p> 
 </footer>
-
-<script>
-$(document).ready(function(){
-  // Initialize Tooltip
-  $('[data-toggle="tooltip"]').tooltip(); 
-  
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-})
-</script>
 
 </body>
 </html>
